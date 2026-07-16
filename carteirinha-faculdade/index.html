@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carteirinha Digital</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="phone-shell" aria-label="Aplicativo de carteirinha escolar">
+      <div class="status-cutout" aria-hidden="true"></div>
+
+      <section class="hero">
+        <p class="greeting">Olá, Lucas!</p>
+        <p class="subtitle">Acesse sua carteira digital abaixo</p>
+      </section>
+
+      <section class="tips" aria-label="Orientacoes">
+        <div class="tap-icon" aria-hidden="true">
+          <span></span>
+        </div>
+        <div>
+          <p>Botão PDF gera documento assinado</p>
+          <p>Toque na carteira pra virar lado</p>
+        </div>
+        <div class="quick-actions" aria-label="Acoes da carteirinha">
+          <button class="pdf-button" type="button" aria-label="Gerar PDF" title="Gerar PDF">
+            <span>PDF</span>
+          </button>
+          
+        </div>
+      </section>
+
+      <section class="wallet-stage tab-panel active-panel" data-panel="carteira" aria-label="Carteirinha digital">
+        <button class="student-card" type="button" aria-label="Virar carteirinha">
+          <span class="card-face card-front">
+            <span class="card-art">
+              <span class="brand-block">
+                <span class="cne-symbol">CNE</span>
+                <span class="brand-text">Carteira<br />Nacional do<br />Estudante</span>
+              </span>
+
+              <span class="student-name" data-field="name">Lucas Samuel Pereira Alves</span>
+
+              <span class="student-data">
+                <strong>CPF:</strong> <span data-field="cpf">10851318401</span><br />
+                <strong>Data nasc.:</strong> <span data-field="birth">12/09/2004</span><br />
+                <strong>Ensino Superior em:</strong><br />
+                <span data-field="course">Ciência Da Computação</span><br />
+                <span data-field="institution">Cesar School</span>
+              </span>
+
+              <span class="student-photo" aria-label="Foto do estudante">
+                <img data-field="photo" alt="Foto do estudante" />
+                <span class="photo-placeholder" data-field="initials">LS</span>
+              </span>
+
+              <span class="qr-panel">
+                <span class="school-logo" data-field="logo">UFB</span>
+                <span class="qr-code" aria-hidden="true"></span>
+                <span class="code-label">Cod. uso / UTI<br /><strong data-field="code">4P3QGP69D</strong></span>
+                <span class="year" data-field="year">2026</span>
+              </span>
+
+              <span class="corner corner-blue-top"></span>
+              <span class="corner corner-blue-bottom"></span>
+              <span class="corner corner-magenta"></span>
+            </span>
+          </span>
+
+          <span class="card-face card-back">
+            <span class="back-title">Carteira Estudantil</span>
+            <span class="back-valid">Válida até <span data-field="validUntil">31/03/2027</span></span>
+            <span class="back-qr" aria-hidden="true"></span>
+            <span class="back-copy">
+              Documento digital de identificação estudantil de <span data-field="backName">Lucas Samuel Pereira Alves</span>.
+              A autenticidade pode ser conferida pelo código <strong data-field="backCode">4P3QGP69D</strong>.
+            </span>
+          </span>
+        </button>
+      </section>
+
+      <section class="validation-screen tab-panel" data-panel="validacao" aria-label="Validacao da carteirinha" hidden>
+        <div class="validation-photo">
+          <img data-validation-photo alt="Foto do estudante" />
+          <span class="validation-placeholder" data-field="validationInitials">LS</span>
+        </div>
+
+        <div class="validation-qr" aria-hidden="true"></div>
+
+        <div class="validation-info">
+          <h1 data-field="validationName">Lucas Samuel Pereira Alves</h1>
+          <p><strong>CPF:</strong> <span data-field="validationCpf">10851318401</span></p>
+          <p><strong>Nascimento:</strong> <span data-field="validationBirth">12/09/2004</span></p>
+          <p><strong>Curso:</strong> <span data-field="validationCourse">Ciência Da Computação</span></p>
+          <p><strong>Faculdade:</strong> <span data-field="validationInstitution">Cesar School</span></p>
+          <p><strong>Código:</strong> <span data-field="validationCode">4P3QGP69D</span></p>
+          <p><strong>Validade:</strong> <span data-field="validationValidUntil">31/03/2027</span></p>
+        </div>
+      </section>
+
+      <section class="profile-screen tab-panel" data-panel="perfil" aria-label="Perfil do estudante" hidden>
+        <div class="profile-photo">
+          <img data-profile-photo alt="Foto do estudante" />
+          <span class="profile-placeholder" data-field="profileInitials">LS</span>
+        </div>
+
+        <h1 data-field="profileName">Lucas Samuel Pereira Alves</h1>
+        <p data-field="profileInstitution">Cesar School</p>
+
+        <button class="edit-button" type="button" aria-label="Editar dados" title="Editar dados">
+          Editar dados da carteirinha
+        </button>
+      </section>
+
+      <section class="movies-screen tab-panel" data-panel="filmes" aria-label="Filmes" hidden>
+        <h1>Filmes</h1>
+        <p>Área reservada para futuras funcionalidades da plataforma.</p>
+      </section>
+
+      <section class="editor-panel" aria-label="Editar dados da carteirinha" hidden>
+        <form class="editor-form">
+          <div class="editor-header">
+            <h1>Editar dados</h1>
+            <button class="close-editor" type="button" aria-label="Fechar editor">×</button>
+          </div>
+
+          <label>
+            Nome completo
+            <input name="name" type="text" value="Lucas Samuel Pereira Alves" required />
+          </label>
+
+          <div class="form-grid">
+            <label>
+              CPF
+              <input name="cpf" type="text" value="10851318401" required />
+            </label>
+            <label>
+              Nascimento
+              <input name="birth" type="text" value="12/09/2004" required />
+            </label>
+          </div>
+
+          <label>
+            Curso
+            <input name="course" type="text" value="Ciência Da Computação" required />
+          </label>
+
+          <label>
+            Faculdade
+            <input name="institution" type="text" value="Cesar School" required />
+          </label>
+
+          <div class="form-grid">
+            <label>
+              Código
+              <input name="code" type="text" value="4P3QGP69D" required />
+            </label>
+            <label>
+              Ano
+              <input name="year" type="text" value="2026" required />
+            </label>
+          </div>
+
+          <div class="form-grid">
+            <label>
+              Validade
+              <input name="validUntil" type="text" value="31/03/2027" required />
+            </label>
+            <label>
+              Sigla/logo
+              <input name="logo" type="text" value="UFB" maxlength="4" required />
+            </label>
+          </div>
+
+          <label>
+            Foto do estudante
+            <input name="photo" type="file" accept="image/*" />
+          </label>
+
+          <div class="editor-actions">
+            <button class="secondary-button" type="button">Limpar foto</button>
+            <button class="save-button" type="submit">Salvar carteirinha</button>
+          </div>
+        </form>
+      </section>
+
+      <nav class="bottom-nav" aria-label="Navegacao principal">
+        <button class="active" type="button" data-tab="carteira">
+          <span class="nav-icon id-card"></span>
+          Carteira
+        </button>
+        <button type="button" data-tab="validacao">
+          <span class="nav-icon grid"></span>
+          Validação
+        </button>
+        <button type="button" data-tab="filmes">
+          <span class="nav-icon ticket"></span>
+          Filmes
+        </button>
+        <button type="button" data-tab="perfil">
+          <span class="nav-icon user"></span>
+          Perfil
+        </button>
+      </nav>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
